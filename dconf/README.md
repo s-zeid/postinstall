@@ -1,5 +1,5 @@
 Files in this directory are the exact output of `dconf dump DIRECTORY`,
-but with `DIRECTORY and` a blank line prepended to the beginning of the
+but with `DIRECTORY` and a blank line prepended to the beginning of the
 output.  `postinstall` installs each file using the following code,
 executed from within the directory in which `postinstall` is located:
 
