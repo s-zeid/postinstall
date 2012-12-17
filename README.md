@@ -12,6 +12,8 @@ writing) using GNOME Shell as its desktop environment.
 Some things (like cron jobs in `cron.d/` and, in some places, GNOME desktop
 configuration) are broken.  I need to fix these someday.
 
+This code is released under the X11 License.  See `LICENSE.md` for details.
+
 Usage
 -----
 
