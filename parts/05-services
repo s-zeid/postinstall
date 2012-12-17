@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Enable and start certain services
+sudo systemctl enable lighttpd.service
+sudo systemctl enable  php-fpm.service
+sudo systemctl enable     sshd.service
+sudo systemctl start      sshd.service

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Install local RPMs
+sudo yum localinstall --nogpgcheck rpms/*.rpm

@@ -1,0 +1,46 @@
+/org/gnome/
+
+[desktop/interface]
+gtk-color-scheme='base_color:#ffffff\nbg_color:#e0e0e0\ntooltip_bg_color:#343434\nselected_bg_color:#aa0000\ntext_color:#2e3436\nfg_color:#2e3436\ntooltip_fg_color:#ffffff\nselected_fg_color:#ffffff\nlink_color:#aa0000'
+gtk-im-module='xim'
+gtk-theme='FlatStudioRed'
+icon-theme='gnome-dust'
+buttons-have-icons=true
+menus-have-icons=true
+document-font-name='Ubuntu 11'
+font-name='Ubuntu 11'
+monspace-font-name='Ubuntu Mono 13'
+
+[desktop/screensaver]
+lock-activation-enabled=false
+lock-enabled=false
+
+[desktop/session]
+idle-delay=0
+
+[wm/preferences]
+action-middle-click-titlebar='toggle-shade'
+button-layout='menu:minimize,maximize,close'
+theme='Bar'
+titlebar-font='Ubuntu Medium 10'
+
+[wm/keybindings]
+move-to-center=['<Super>i']
+toggle-shaded=['<Super><Shift>Up']
+
+[shell/calendar]
+show-weekdate=true
+
+[shell/clock]
+show-date=true
+show-seconds=true
+
+[shell/overrides]
+button-layout='menu:minimize,maximize,close'
+dynamic-workspaces=true
+
+[settings-daemon/plugins/power]
+lid-close-ac-action=''
+lid-close-battery-action=''
+sleep-display-ac=3600
+sleep-display-battery=3600

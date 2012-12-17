@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Set the shell to ZSH
+chsh -s /bin/zsh

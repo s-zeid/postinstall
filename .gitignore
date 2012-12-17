@@ -1,0 +1,6 @@
+files/*
+icons/*
+themes/*
+!themes/Bar
+rpms/msttcorefonts-*
+*.swp

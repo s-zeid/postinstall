@@ -1,0 +1,9 @@
+#!/bin/bash
+cd "$(dirname "$0")"/..
+
+# Install themes
+for d in icons themes; do
+ for i in $d/*; do
+  [ ! -e ~/".$i" ] && cp -ar $i ~/.$d
+ done
+done

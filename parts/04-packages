@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Install packages
+
+ARCH="`uname -i`"
+
+# Install these first so they can be used while the other packages are installing
+sudo yum install \
+ firefox thunderbird dconf-editor gnome-tweak-tool synergy \
+ byobu vim-{enhanced,X11} wget zsh
+[ "$HOSTNAME" = "tracce" ] && synergys || synergyc tracce
+
+# RPMFusion repository
+sudo yum localinstall --nogpgcheck \
+ http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm \
+ http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
+
+# spot's Chromium repository
+sudo wget -NP /etc/yum.repos.d \
+ http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium-stable.repo
+
+# Adobe repository
+sudo yum localinstall --nogpgcheck \
+ http://linuxdownload.adobe.com/adobe-release/adobe-release-"$ARCH"-1.0-1.noarch.rpm
+
+# Dropbox repository
+[ ! -e "/etc/yum.repos.d/dropbox.repo" ] && echo -e "[Dropbox]\nname=Dropbox Repository\nbaseurl=http://linux.dropbox.com/fedora/\$releasever/\ngpgkey=http://linux.dropbox.com/fedora/rpm-public-key.asc" | sudo tee /etc/yum.repos.d/dropbox.repo > /dev/null
+
+# Install other packages
+sudo yum groupinstall "Development Tools"
+sudo yum install redhat-lsb kernel-doc \
+ cowsay git ncdu openssh-server sl w3m xclip xsel \
+ python-{bottle,flup,gevent,imaging,mutagen,pip,setuptools} PyYAML Django{,-doc} \
+ lighttpd{,-fastcgi} php-{fpm,cli,manual-en,gd,imap,magickwand,tidy} httpd-tools \
+ pandoc{,-pdf} \
+ java-1.7.0-openjdk{,-devel,-javadoc} \
+ gnome-shell-extension-{alternative-status-menu,gpaste,remove-accessibility-icon} \
+ gnome-shell-extension-{systemMonitor,user-theme,weather} \
+ gnome-shell-theme-ambiance gtk-{murrine,unico}-engine qt-config \
+ pavucontrol paprefs pulseaudio-equalizer paman \
+ gimp gimp-{data-extras,help,help-browser,fourier-plugin,lqr-plugin,resynthesizer} \
+ gcolor2 gpaste libreoffice ufraw{,-gimp} \
+ ffmpeg lame vlc{,-extras} mplayer{,-doc} mencoder gstreamer-{ffmpeg,plugins-ugly} \
+ chromium nautilus-dropbox VirtualBox vlmc \
+ nspluginwrapper alsa-plugins-pulseaudio flash-plugin icedtea-web{,-javadoc} \
+ webkitgtk{,3} pywebkitgtk qtwebkit
+
+# Install some Python packages
+echo -ne "\b"
+sudo easy_install -U pip
+sudo pip install pylast
