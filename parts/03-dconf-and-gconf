@@ -3,14 +3,14 @@ cd "$(dirname "$0")"/..
 
 # Set dconf and gconf settings
 for i in dconf/*; do
- if [ "$i" != "dconf/README" ]; then
+ if [ "$i" != "dconf/README.md" ]; then
   # First line is dconf directory name; second line is empty;
   # dconf settings dump starts on the third line.
   tail -n+3 "$i" | dconf load "`head -n1 "$i"`"
  fi
 done
 for i in gconf/*; do
- if [ "$i" != "gconf/README" ]; then
+ if [ "$i" != "gconf/README.md" ]; then
   # gconf directory name is included in the original dump file.
   gconftool-2 --load "$i"
  fi
