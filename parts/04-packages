@@ -29,8 +29,9 @@ sudo yum localinstall --nogpgcheck \
 # Install other packages
 sudo yum groupinstall "Development Tools"
 sudo yum install redhat-lsb kernel-doc \
- cowsay git ncdu openssh-server sl w3m xclip xsel \
- python-{bottle,flup,gevent,imaging,mutagen,pip,setuptools} PyYAML Django{,-doc} \
+ cowsay dig git ncdu nmap openssh-server p7zip{,-plugins} sl tmux w3m whois xclip xsel\
+ python-{bottle,flup,gevent,imaging,mutagen,pip,setuptools,unidecode} PyYAML \
+ Django{,-doc} \
  lighttpd{,-fastcgi} php-{fpm,cli,manual-en,gd,imap,magickwand,tidy} httpd-tools \
  pandoc{,-pdf} \
  java-1.7.0-openjdk{,-devel,-javadoc} \
@@ -39,11 +40,12 @@ sudo yum install redhat-lsb kernel-doc \
  gnome-shell-theme-ambiance gtk-{murrine,unico}-engine qt-config \
  pavucontrol paprefs pulseaudio-equalizer paman \
  gimp gimp-{data-extras,help,help-browser,fourier-plugin,lqr-plugin,resynthesizer} \
- gcolor2 gpaste libreoffice ufraw{,-gimp} \
+ gcolor2 easytag exfalso gpaste gthumb libreoffice ufraw{,-gimp} \
  ffmpeg lame vlc{,-extras} mplayer{,-doc} mencoder gstreamer-{ffmpeg,plugins-ugly} \
  chromium nautilus-dropbox VirtualBox vlmc \
  nspluginwrapper alsa-plugins-pulseaudio flash-plugin icedtea-web{,-javadoc} \
- webkitgtk{,3} pywebkitgtk qtwebkit
+ webkitgtk{,3} pywebkitgtk qtwebkit \
+ supertux
 
 # Install some Python packages
 echo -ne "\b"
