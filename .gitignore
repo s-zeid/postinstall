@@ -2,5 +2,5 @@ files/*
 icons/*
 themes/*
 !themes/Bar
-rpms/msttcorefonts-*
+rpms/*
 *.swp
