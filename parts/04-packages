@@ -37,7 +37,7 @@ sudo yum install redhat-lsb kernel-doc \
  java-1.7.0-openjdk{,-devel,-javadoc} \
  gnome-shell-extension-{alternative-status-menu,gpaste,remove-accessibility-icon} \
  gnome-shell-extension-{systemMonitor,user-theme,weather} \
- gnome-shell-theme-ambiance gtk-{murrine,unico}-engine qt-config \
+ gnome-shell-theme-ambiance gtk-{murrine,unico}-engine qt-config zenity \
  pavucontrol paprefs pulseaudio-equalizer paman \
  gimp gimp-{data-extras,help,help-browser,fourier-plugin,lqr-plugin,resynthesizer} \
  gcolor2 easytag exfalso gpaste gthumb libreoffice ufraw{,-gimp} \
@@ -50,4 +50,4 @@ sudo yum install redhat-lsb kernel-doc \
 # Install some Python packages
 echo -ne "\b"
 sudo easy_install -U pip
-sudo pip install pylast
+sudo pip install pylast PyZenity
