@@ -29,29 +29,33 @@ sudo yum localinstall --nogpgcheck \
 # Install other packages
 sudo yum install redhat-lsb kernel-doc \
  cowsay dig git id3v2 ncdu nmap openssh-server p7zip{,-plugins} sl tmux w3m whois \
- python-{bottle,flup,gevent,imaging,mutagen,pip,setuptools,unidecode} PyYAML \
- Django{,-doc} \
- lighttpd{,-fastcgi} php-{fpm,cli,manual-en,gd,imap,magickwand,tidy} httpd-tools \
  pandoc{,-pdf} \
  java-1.7.0-openjdk{,-devel,-javadoc} \
- xclip xsel zenity
-sudo yum groupinstall "Development Tools"
+ python-{bottle,flup,gevent,imaging,mutagen,pip,setuptools,unidecode} PyYAML \
+ Django{,-doc} \
+ lighttpd{,-fastcgi} httpd-tools \
+ php-{fpm,cli,manual-en,gd,imap,magickwand,mbstring,tidy}
 
-[ -n "$DISPLAY" ] && sudo yum install \
- gnome-shell-extension-{alternative-status-menu,gpaste,remove-accessibility-icon} \
- gnome-shell-extension-{systemMonitor,user-theme,weather} \
- gnome-shell-theme-ambiance gtk-{murrine,unico}-engine qt-config \
- pavucontrol paprefs pulseaudio-equalizer paman \
- gimp gimp-{data-extras,help,help-browser,fourier-plugin,lqr-plugin,resynthesizer} \
- gcolor2 easytag exfalso gpaste gthumb libreoffice ufraw{,-gimp} \
- ffmpeg lame vlc{,-extras} mplayer{,-doc} mencoder gstreamer-{ffmpeg,plugins-ugly} \
- chromium nautilus-dropbox VirtualBox vlmc \
- nspluginwrapper alsa-plugins-pulseaudio flash-plugin icedtea-web{,-javadoc} \
- webkitgtk{,3} pywebkitgtk qtwebkit \
- supertux
-
-# Install some Python packages
-echo -ne "\b"
 sudo easy_install -U pip
 sudo pip install awscli pylast
-[ -n "$DISPLAY" ] && sudo pip install PyZenity
+
+sudo yum groupinstall "Development Tools"
+
+# Install packages specific to desktop installations
+if [ -n "$DISPLAY" ]; then
+ sudo yum install \
+  xclip xsel zenity \
+  gnome-shell-extension-{alternative-status-menu,gpaste,remove-accessibility-icon} \
+  gnome-shell-extension-{systemMonitor,user-theme,weather} \
+  gnome-shell-theme-ambiance gtk-{murrine,unico}-engine qt-config \
+  pavucontrol paprefs pulseaudio-equalizer paman \
+  gimp gimp-{data-extras,help,help-browser,fourier-plugin,lqr-plugin,resynthesizer} \
+  gcolor2 easytag exfalso gpaste gthumb libreoffice ufraw{,-gimp} \
+  ffmpeg lame vlc{,-extras} mplayer{,-doc} mencoder gstreamer-{ffmpeg,plugins-ugly} \
+  chromium nautilus-dropbox VirtualBox vlmc \
+  nspluginwrapper alsa-plugins-pulseaudio flash-plugin icedtea-web{,-javadoc} \
+  webkitgtk{,3} pywebkitgtk qtwebkit \
+  supertux
+
+ sudo pip install PyZenity
+fi
