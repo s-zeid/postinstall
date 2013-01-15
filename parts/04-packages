@@ -50,7 +50,7 @@ if [ -n "$DISPLAY" ]; then
   gnome-shell-theme-ambiance gtk-{murrine,unico}-engine qt-config \
   pavucontrol paprefs pulseaudio-equalizer paman \
   gimp gimp-{data-extras,help,help-browser,fourier-plugin,lqr-plugin,resynthesizer} \
-  gcolor2 easytag exfalso gpaste gthumb libreoffice ufraw{,-gimp} \
+  gcolor2 easytag exfalso gpaste gthumb inkscape libreoffice ufraw{,-gimp} \
   ffmpeg lame vlc{,-extras} mplayer{,-doc} mencoder gstreamer-{ffmpeg,plugins-ugly} \
   chromium nautilus-dropbox VirtualBox vlmc \
   nspluginwrapper alsa-plugins-pulseaudio flash-plugin icedtea-web{,-javadoc} \
