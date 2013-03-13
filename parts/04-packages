@@ -8,7 +8,8 @@ ARCH="`uname -i`"
 sudo yum install \
  firefox thunderbird dconf-editor gnome-tweak-tool synergy \
  byobu vim-{enhanced,X11} wget zsh
-[ "$HOSTNAME" = "tracce" ] && synergys || synergyc tracce
+[ "$HOSTNAME" = "tracce" ]         && synergys
+[ "$HOSTNAME" = "lady-labyrinth" ] && synergyc tracce
 
 # RPMFusion repository
 sudo yum localinstall --nogpgcheck \
