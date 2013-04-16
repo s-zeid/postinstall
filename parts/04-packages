@@ -5,11 +5,13 @@
 ARCH="`uname -i`"
 
 # Install these first so they can be used while the other packages are installing
-sudo yum install \
- firefox thunderbird dconf-editor gnome-tweak-tool synergy \
- byobu vim-{enhanced,X11} wget zsh
-[ "$HOSTNAME" = "tracce" ]         && synergys
-[ "$HOSTNAME" = "lady-labyrinth" ] && synergyc tracce
+FIRST="byobu vim-enhanced wget zsh"
+FIRST_GUI="firefox thunderbird dconf-editor gnome-tweak-tool synergy vim-X11"
+sudo yum install $FIRST $([ -n "$DISPLAY" ] && echo -n "$FIRST_GUI")
+if [ -n "$DISPLAY" ]; then
+ [ "$HOSTNAME" = "tracce" ]         && synergys
+ [ "$HOSTNAME" = "lady-labyrinth" ] && synergyc tracce
+fi
 
 # RPMFusion repository
 sudo yum localinstall --nogpgcheck \
