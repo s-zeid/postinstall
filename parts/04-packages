@@ -36,13 +36,15 @@ sudo yum install redhat-lsb kernel-doc \
  python-{bottle,flup,gevent,imaging,mutagen,pip,setuptools,unidecode} PyYAML \
  Django{,-doc} \
  nodejs npm \
+ ruby{,-devel} \
  php-{fpm,cli,manual-en,gd,imap,magickwand,mbstring,tidy} \
  java-1.7.0-openjdk{,-devel,-javadoc} \
  lighttpd{,-fastcgi} httpd-tools
 
-sudo easy_install -U pip
+#sudo easy_install -U pip    # not sure why this is needed...
 sudo pip install awscli pylast python-gnupg
 sudo npm install -g stylus coffee-script
+sudo gem install jekyll
 
 sudo yum groupinstall "Development Tools"
 
