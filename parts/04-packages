@@ -33,8 +33,7 @@ sudo yum localinstall --nogpgcheck \
 sudo yum install redhat-lsb kernel-doc \
  cowsay dig git id3v2 ncdu nmap openssh-server p7zip{,-plugins} sl tmux w3m whois \
  pandoc{,-pdf} \
- python-{bottle,flup,gevent,imaging,mutagen,pip,setuptools,unidecode} PyYAML \
- Django{,-doc} \
+ python-{bottle,django,flup,gevent,imaging,mutagen,pip,setuptools,unidecode} PyYAML \
  nodejs npm \
  ruby{,-devel} \
  php-{fpm,cli,manual-en,gd,imap,magickwand,mbstring,tidy} \
@@ -54,7 +53,7 @@ if [ -n "$DISPLAY" ]; then
   xclip xsel zenity \
   gnome-shell-extension-{alternative-status-menu,gpaste} \
   gnome-shell-extension-{systemMonitor,user-theme,weather} \
-  gnome-shell-theme-ambiance gtk-{murrine,unico}-engine qt-config \
+  gtk-{murrine,unico}-engine qt-config \
   pavucontrol paprefs pulseaudio-equalizer paman \
   gimp gimp-{data-extras,help,help-browser,fourier-plugin,lqr-plugin,resynthesizer} \
   gcolor2 easytag exfalso gpaste gthumb inkscape libreoffice ufraw{,-gimp} \
