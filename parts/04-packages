@@ -32,7 +32,7 @@ sudo yum localinstall --nogpgcheck \
 # Install other packages
 sudo yum install redhat-lsb kernel-doc \
  cowsay dig git id3v2 ncdu nmap openssh-server p7zip{,-plugins} sl tmux w3m whois \
- pandoc{,-pdf} \
+ pandoc{,-pdf} pdftk \
  python-{bottle,django,flup,gevent,imaging,mutagen,pip,setuptools,unidecode,which} PyYAML \
  nodejs npm \
  ruby{,-devel} \
@@ -51,8 +51,7 @@ sudo yum groupinstall "Development Tools"
 if [ -n "$DISPLAY" ]; then
  sudo yum install \
   xclip xsel zenity \
-  gnome-shell-extension-{alternative-status-menu,gpaste} \
-  gnome-shell-extension-{systemMonitor,user-theme,weather} \
+  gnome-shell-extension-{alternative-status-menu,gpaste,systemMonitor,user-theme} \
   gtk-{murrine,unico}-engine qt-config \
   pavucontrol paprefs pulseaudio-equalizer paman \
   gimp gimp-{data-extras,help,help-browser,fourier-plugin,lqr-plugin,resynthesizer} \
