@@ -5,7 +5,7 @@
 # Change into script directory {{{1
 cd "$(dirname "$0")"
 
-# Run parts
+# Run parts {{{1
 for part in parts/*; do
  base="`basename "$part"`"
  if [ -z "$1" ]; then
