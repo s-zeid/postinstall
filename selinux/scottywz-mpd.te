@@ -1,0 +1,67 @@
+
+module scottywz-mpd 1.0;
+
+require {
+	type avahi_t;
+	type bluetooth_t;
+        type config_home_t;
+	type mozilla_plugin_t;
+	type mozilla_plugin_tmpfs_t;
+	type mpd_t;
+	type mpd_var_lib_t;
+	type pulseaudio_home_t;
+        type pulseaudio_port_t;
+	type unconfined_t;
+	type user_tmp_t;
+	type user_tmpfs_t;
+	type user_home_t;
+	type user_home_dir_t;
+	class dbus send_msg;
+	class dir add_name;
+	class dir getattr;
+	class dir open;
+	class dir read;
+	class dir search;
+	class dir setattr;
+	class dir write;
+	class file create;
+	class file execute;
+	class file getattr;
+	class file lock;
+	class file open;
+	class file read;
+	class file write;
+	class lnk_file create;
+	class lnk_file getattr;
+	class lnk_file open;
+	class lnk_file read;
+	class process execmem;
+	class process signull;
+	class sock_file open;
+	class sock_file write;
+        class tcp_socket name_connect;
+	class unix_stream_socket connectto;
+}
+
+#============= mpd_t ==============
+allow avahi_t     mpd_t:dbus send_msg;
+allow bluetooth_t mpd_t:dbus send_msg;
+allow mpd_t       avahi_t:dbus send_msg;
+allow mpd_t       bluetooth_t:dbus send_msg;
+allow mpd_t       config_home_t:dir { open read search };
+allow mpd_t       mozilla_plugin_t:process signull;
+allow mpd_t       mozilla_plugin_tmpfs_t:file { getattr open read };
+allow mpd_t       mpd_var_lib_t:file execute;
+allow mpd_t       pulseaudio_home_t:dir { add_name open read setattr write };
+allow mpd_t       pulseaudio_home_t:file { lock open read write };
+allow mpd_t       pulseaudio_home_t:lnk_file { create getattr open read };
+allow mpd_t       pulseaudio_port_t:tcp_socket { name_connect };
+allow mpd_t       self:process execmem;
+allow mpd_t       unconfined_t:unix_stream_socket { connectto };
+allow mpd_t       user_home_t:dir { getattr open read search write };
+allow mpd_t       user_tmp_t:dir { add_name getattr open read search write };
+allow mpd_t       user_tmp_t:file { create open read write };
+allow mpd_t       user_tmp_t:sock_file { open write };
+allow mpd_t       user_tmpfs_t:file { create open read write };
+allow mpd_t       user_home_dir_t:dir { getattr open read search write };
+allow mpd_t       user_home_t:file { open read write };

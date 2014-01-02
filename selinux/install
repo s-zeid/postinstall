@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo cd "$(dirname "$0")"
+cd "$(dirname "$0")"
+
+if [ $# -ne 0 ]; then
+ for i; do
+  if egrep -q -v '\.(pp|te|fc|if)$' <<< "$i"; then
+   i="$i".pp
+  else
+   i=$(sed -r -e 's/\.(pp|te|fc|if)$/.pp/g' <<< "$i")
+  fi
+  echo sudo semodule -i "$i"
+  sudo semodule -i "$i"
+ done
+else
+ for i in *.pp; do
+  echo sudo semodule -i "$i"
+  sudo semodule -i "$i"
+ done
+fi

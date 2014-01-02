@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo cd "$(dirname "$0")"
+cd "$(dirname "$0")"
+
+if [ $# -ne 0 ]; then
+ for i; do
+  i=$(sed -r -e 's/\.(pp|te|fc|if)$//g' <<< "$i")
+ done
+ if [ "$i" = "tmp" ]; then
+  echo rm -rf tmp
+  rm -rf tmp
+ else
+  echo rm -f "$i".fc "$i".if "$i".pp
+  rm -f "$i".fc "$i".if "$i".pp
+ fi
+else
+ echo rm -f *.fc *.if *.pp
+ rm -f *.fc *.if *.pp
+ echo rm -rf tmp
+ rm -rf tmp
+fi

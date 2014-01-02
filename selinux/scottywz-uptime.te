@@ -1,0 +1,13 @@
+
+module scottywz-uptime 1.0;
+
+require {
+	type httpd_t;
+	type initrc_var_run_t;
+	class file lock;
+	class file open;
+	class file read;
+}
+
+#============= httpd_t ==============
+allow httpd_t initrc_var_run_t:file { lock open read };

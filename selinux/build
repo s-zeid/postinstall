@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo cd "$(dirname "$0")"
+cd "$(dirname "$0")"
+
+if [ $# -ne 0 ]; then
+ for i; do
+  i=$(sed -r -e 's/\.(pp|te|fc|if)$//g' <<< "$i")
+  echo ./clean "$i"
+  ./clean "$i"
+  echo make -f /usr/share/selinux/devel/Makefile "$i".pp
+  make -f /usr/share/selinux/devel/Makefile "$i".pp
+  echo rm -f "$i.fc" "$i.if"
+  rm -f "$i.fc" "$i.if"
+ done
+else
+ echo ./clean
+ ./clean
+ echo make -f /usr/share/selinux/devel/Makefile
+ make -f /usr/share/selinux/devel/Makefile
+ echo rm -f '*.fc' '*.if'
+ rm -f *.fc *.if
+fi

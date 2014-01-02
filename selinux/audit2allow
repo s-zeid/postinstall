@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+
+if [ $# -ne 2 ]; then
+ echo "Usage: $0 grep-pattern module-name" >&2
+ exit 2
+fi
+
+sudo grep "$1" /var/log/audit/audit.log | audit2allow -M "$2"

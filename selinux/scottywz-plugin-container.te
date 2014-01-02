@@ -1,0 +1,21 @@
+
+module scottywz-plugin-container 1.0;
+
+require {
+	type mozilla_plugin_t;
+	type mpd_t;
+	type mpd_tmpfs_t;
+	type httpd_sys_content_t;
+	class dir open;
+	class dir read;
+	class dir search;
+	class file getattr;
+	class file open;
+	class file read;
+	class process signull;
+}
+
+#============= mozilla_plugin_t ==============
+allow mozilla_plugin_t httpd_sys_content_t:dir { open read search };
+allow mozilla_plugin_t mpd_t:process signull;
+allow mozilla_plugin_t mpd_tmpfs_t:file { getattr open read };
