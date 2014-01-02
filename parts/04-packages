@@ -36,7 +36,8 @@ sudo yum localinstall --nogpgcheck \
 sudo yum install redhat-lsb kernel-doc \
  cowsay dig git id3v2 ncdu nmap openssh-server p7zip{,-plugins} sl tmux w3m whois \
  pandoc{,-pdf} pdftk \
- python-{bottle,django,flup,gevent,imaging,mutagen,pip,setuptools,unidecode,which} PyYAML \
+ python-{bottle,django,flup,gevent,imaging,mutagen,pip,setuptools,tools,unidecode,which} \
+  PyYAML \
  nodejs npm \
  ruby{,-devel} \
  php-{fpm,cli,manual-en,gd,imap,magickwand,mbstring,tidy} \
