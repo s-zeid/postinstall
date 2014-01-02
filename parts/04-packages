@@ -45,7 +45,7 @@ sudo yum install redhat-lsb kernel-doc \
 
 #sudo easy_install -U pip    # not sure why this is needed...
 sudo pip install awscli pylast python-gnupg
-sudo npm install -g stylus coffee-script
+sudo npm install -g coffee-script stylus tiddlywiki
 sudo gem install jekyll
 
 sudo yum groupinstall "Development Tools"
