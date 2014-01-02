@@ -18,14 +18,19 @@ lock-enabled=false
 [desktop/session]
 idle-delay=0
 
-[wm/preferences]
+[desktop/wm/preferences]
 action-middle-click-titlebar='toggle-shade'
 button-layout='menu:minimize,maximize,close'
 theme='Bar'
 titlebar-font='Ubuntu Medium 10'
 
-[wm/keybindings]
+[desktop/wm/keybindings]
+minimize=['<Super>n']
 move-to-center=['<Super>i']
+move-to-side-e=['<Super>l']
+move-to-side-n=['<Super>k']
+move-to-side-s=['<Super>j']
+move-to-side-w=['<Super>h']
 toggle-shaded=['<Super><Shift>Up']
 
 [shell/calendar]
