@@ -60,6 +60,7 @@ if [ -n "$DISPLAY" ]; then
   chromium nautilus-dropbox VirtualBox vlmc \
   nspluginwrapper alsa-plugins-pulseaudio flash-plugin icedtea-web{,-javadoc} \
   webkitgtk{,3} pywebkitgtk qtwebkit tkinter \
+  SDL{,_sound}{,-devel} \
   supertux
 
  sudo pip install PyZenity
