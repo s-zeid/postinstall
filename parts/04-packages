@@ -18,9 +18,12 @@ sudo yum localinstall --nogpgcheck \
  http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm \
  http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
 
-# spot's Chromium repository
-sudo wget -NP /etc/yum.repos.d \
- http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium-stable.repo
+## spot's Chromium repository
+#sudo wget -NP /etc/yum.repos.d \
+# http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium-stable.repo
+
+# Google Chrome repository
+echo -e '[google-chrome]\nname=google-chrome\nbaseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64\nenabled=1\ngpgcheck=1' | sudo tee /etc/yum.repos.d/google-chrome.repo > /dev/null
 
 # Adobe repository
 sudo yum localinstall --nogpgcheck \
@@ -57,7 +60,7 @@ if [ -n "$DISPLAY" ]; then
   gimp gimp-{data-extras,help,help-browser,fourier-plugin,lqr-plugin,resynthesizer} \
   gcolor2 easytag exfalso gpaste gthumb inkscape libreoffice ufraw{,-gimp} \
   ffmpeg lame vlc{,-extras} mplayer{,-doc} mencoder gstreamer-{ffmpeg,plugins-ugly} \
-  chromium nautilus-dropbox VirtualBox vlmc \
+  google-chrome-stable nautilus-dropbox VirtualBox vlmc \
   nspluginwrapper alsa-plugins-pulseaudio flash-plugin icedtea-web{,-javadoc} \
   webkitgtk{,3} pywebkitgtk qtwebkit tkinter \
   SDL{,_sound}{,-devel} \
