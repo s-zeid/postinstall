@@ -1,0 +1,12 @@
+# Install these first so they can be used while the other packages are installing
+
+$ sudo yum install
+firefox
+thunderbird
+dconf-editor
+gnome-tweak-tool
+synergy
+vim-X11
+
+$! [ "$HOSTNAME" = "tracce" ]         && synergys
+$! [ "$HOSTNAME" = "lady-labyrinth" ] && synergyc tracce

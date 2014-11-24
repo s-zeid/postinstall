@@ -1,0 +1,4 @@
+# Language-specific package managers
+
+# Python
+$ sudo pip install PyZenity

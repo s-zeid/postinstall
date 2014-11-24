@@ -5,72 +5,90 @@
 ARCH="`uname -i`"
 gui() { test -n "$DISPLAY"; }
 
-# Install these first so they can be used while the other packages are installing
-FIRST="byobu vim-enhanced wget zsh"
-FIRST_GUI="firefox thunderbird dconf-editor gnome-tweak-tool synergy vim-X11"
-sudo yum install $FIRST $(gui && echo -n "$FIRST_GUI")
-if gui; then
- [ "$HOSTNAME" = "tracce" ]         && synergys
- [ "$HOSTNAME" = "lady-labyrinth" ] && synergyc tracce
+expand_names() {
+ awk '
+  BEGIN {
+   prefix=""
+   glue=""
+   indent=""
+  }
+  /^[^ #]/ {
+   prefix=""
+   glue=""
+   indent=""
+  }
+  /^[^ $#][^,]+$/ {
+   prefix=$0
+   print $0
+  }
+  /^[^ $#][^,]+,/ {
+   prefix=$0
+   sub(/,.*$/, "", prefix)
+   glue=$0
+   sub(/^[^,]+,/, "", glue)
+   if (glue != "") {
+    print prefix
+   }
+  }
+  /^ / {
+   this_indent=$0
+   sub(/[^ ].*$/, "", this_indent)
+   if (indent == "") {
+    indent = this_indent
+   }
+   if (indent == this_indent) {
+    suffix=$0
+    sub(/^\s+/, "", suffix)
+    print prefix glue suffix
+   } else {
+    print $0
+   }
+  }
+  /^\$/ {
+   print ""
+   print $0
+  }
+  /^#/ {}
+ '
+}
+
+collapse_commands() {
+ awk '
+  BEGIN { line="" }
+  /./   { line=line " " $0; }
+        { sub(/^ /, "", line) }
+  /^$/  { if (line != "") { print line }; line="" }
+  END   { print line }
+ ' | sed -e 's/\$ *//g'
+}
+
+convert_package_list() {
+ (expand_names | expand_names | expand_names | collapse_commands) < "$1"
+}
+
+cd "$(dirname "$0")"/..
+
+if [ x"$1" = x"-n" ] || [ x"$1" = x"--dry-run" ]; then
+ dry=1
+else
+ dry=0
 fi
 
-# RPMFusion repository
-sudo yum localinstall --nogpgcheck \
- http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm \
- http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
+install_commands() {
+ for i in $@; do
+  if gui || (printf '%s' "$i" | grep -q -v -e '\.gui$'); then
+   if [ -x "$i" ]; then
+    echo ". $i"
+   else
+    convert_package_list "$i"
+   fi
+  fi
+ done
+}
 
-# RussianFedora RFRemix repository (for Chromium)
-if gui; then
- sudo wget -NP /etc/yum/repos.d \
-  https://copr.fedoraproject.org/coprs/churchyard/chromium-russianfedora/repo/fedora-20/churchyard-chromium-russianfedora-fedora-20.repo
-fi
-
-# Adobe repository (for Flash Player)
-if gui; then
- sudo yum localinstall --nogpgcheck \
-  http://linuxdownload.adobe.com/adobe-release/adobe-release-"$ARCH"-1.0-1.noarch.rpm
-fi
-
-# Insync repository (Google Drive client)
-if gui; then
- [ ! -e "/etc/yum.repos.d/insync.repo" ] && echo -e "[insync]\nname=insync repo\nbaseurl=http://yum.insynchq.com/fedora/\ngpgcheck=1\ngpgkey=https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key\nenabled=1\nrepo_gpgcheck=1\nmetadata_expire=120m" | sudo tee /etc/yum.repos.d/insync.repo > /dev/null
-fi
-
-# Install other packages
-sudo yum install redhat-lsb kernel-doc \
- cowsay dig git id3v2 ncdu nmap openssh-server p7zip{,-plugins} sl tmux w3m whois \
- pandoc{,-pdf} pdftk \
- python-{bottle,cherrypy,django,flup,gevent,imaging,mutagen,pip,setuptools,tools} \
-  python-{unidecode,which} \
-  PyYAML \
- nodejs npm \
- ruby{,-devel} \
- php-{fpm,cli,manual-en,gd,imap,magickwand,mbstring,tidy} \
- java-1.8.0-openjdk{,-devel,-javadoc} \
- lighttpd{,-fastcgi} httpd-tools
-
-#sudo easy_install -U pip    # not sure why this is needed...
-sudo pip install awscli pylast python-gnupg
-sudo npm install -g coffee-script stylus tiddlywiki
-sudo gem install jekyll
-
-sudo yum groupinstall "Development Tools"
-
-# Install packages specific to desktop installations
-if gui; then
- sudo yum install \
-  xclip xsel zenity \
-  gnome-shell-extension-{alternative-status-menu,gpaste,systemMonitor,user-theme} \
-  gtk-{murrine,unico}-engine qt-config \
-  pavucontrol paprefs pulseaudio-equalizer paman \
-  gimp gimp-{data-extras,help,help-browser,fourier-plugin,lqr-plugin,resynthesizer} \
-  gcolor2 easytag exfalso gpaste gthumb inkscape libreoffice ufraw{,-gimp} \
-  ffmpeg lame vlc{,-extras} mplayer{,-doc} mencoder gstreamer-{ffmpeg,plugins-ugly} \
-  google-chrome-stable nautilus-dropbox VirtualBox vlmc \
-  nspluginwrapper alsa-plugins-pulseaudio flash-plugin icedtea-web{,-javadoc} \
-  webkitgtk{,3} pywebkitgtk qtwebkit tkinter \
-  SDL{,_sound}{,-devel} \
-  supertux
-
- sudo pip install PyZenity
+if [ $dry -eq 0 ]; then
+ echo 'wet ;)'
+ #install_commands packages/* | sh
+else
+ install_commands packages/*
 fi

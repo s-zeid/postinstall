@@ -1,0 +1,71 @@
+$ sudo yum install
+
+# Basics
+cowsay
+dig
+git
+id3v2
+kernel-doc
+ncdu
+nmap
+openssh-server
+p7zip,-
+ plugins
+sl
+tmux
+w3m
+whois
+
+# Document manipulation
+pandoc,-
+ pdf
+pdftk
+
+# Python
+python-,
+ bottle
+ cherrypy
+ django
+ flup
+ gevent
+ imaging
+ mutagen
+ pip
+ setuptools
+ tools
+ unidecode
+ which
+PyYAML
+
+# Node.js
+nodejs
+npm
+
+# Ruby
+ruby,-
+ devel
+
+# PHP
+php-,
+ fpm
+ cli
+ manual-en
+ gd
+ imap
+ magickwand
+ mbstring
+ tidy
+
+# Java
+java-1.8.0-openjdk,-
+ devel
+ javadoc
+
+# HTTP serving
+lighttpd,-
+ fastcgi
+httpd-tools
+
+# Yum groups
+$ sudo yum groups install
+"Development Tools"

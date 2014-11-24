@@ -1,0 +1,75 @@
+$ sudo yum install
+
+# Basics
+xclip
+xsel
+zenity
+
+# GNOME Shell
+gnome-shell-extension-,
+ gpaste
+ user-theme
+
+# Theming
+gtk-,
+ murrine-engine
+ unico-engine
+qt-config
+
+# PulseAudio
+alsa-plugins-pulseaudio
+pavucontrol
+paprefs
+pulseaudio-equalizer
+paman
+
+# Imaging
+gcolor2
+gimp,-
+ data-extras
+ help
+ help-browser
+ fourier-plugin
+ lqr-plugin
+ resynthesizer
+gthumb
+inkscape
+ufraw,-
+ gimp
+
+gpaste
+libreoffice
+
+# Multimedia
+easytag
+exfalso
+ffmpeg
+lame
+vlc,-
+ extras
+mplayer,-
+ doc
+mencoder
+gstreamer-,
+ ffmpeg
+ plugins-ugly
+
+chromium
+VirtualBox
+nspluginwrapper
+flash-plugin
+icedtea-web,-
+ javadoc
+webkitgtk
+webkitgtk3
+pywebkitgtk
+qtwebkit
+tkinter
+
+# SDL
+SDL,_
+ sound
+SDL-devel
+
+# Games
+supertux

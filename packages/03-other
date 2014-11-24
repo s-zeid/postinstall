@@ -1,0 +1,17 @@
+# Language-specific package managers
+
+# Python
+$ sudo pip install
+awscli
+pylast
+python-gnupg
+
+# Node.js
+$ sudo npm install -g
+coffee-script
+stylus
+tiddlywiki
+
+# Ruby
+$ sudo gem install
+jekyll
