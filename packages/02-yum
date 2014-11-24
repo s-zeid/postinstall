@@ -16,6 +16,7 @@ openssh-server
 p7zip,-
  plugins
 ranger
+rsync
 sshfs
 telnet
 tmux
