@@ -1,9 +1,13 @@
 $ sudo yum install
 
+# Fedora-specific
+fedup
+koji
+
 # Basics
-cowsay
+cabextract
+dash
 dig
-git
 id3v2
 kernel-doc
 ncdu
@@ -11,15 +15,30 @@ nmap
 openssh-server
 p7zip,-
  plugins
-sl
+ranger
+sshfs
+telnet
 tmux
 w3m
 whois
+xar
+
+# VCSs
+git
+mercurial
+svn
+
+# Silly stuffs
+cowsay
+fortune-mod
+gti
+sl
 
 # Document manipulation
 pandoc,-
  pdf
 pdftk
+tidy
 
 # Python
 python-,
@@ -36,6 +55,7 @@ python-,
  unidecode
  which
 PyYAML
+fuse-python
 
 # Node.js
 nodejs
@@ -60,6 +80,8 @@ php-,
 java-1.8.0-openjdk,-
  devel
  javadoc
+bsh
+bsh-utils
 
 # HTTP serving
 lighttpd,-

@@ -1,6 +1,8 @@
 # Install these first so they can be used while the other packages are installing
 
 $ sudo yum install
+
+# Basics
 byobu
 redhat-lsb
 vim-enhanced

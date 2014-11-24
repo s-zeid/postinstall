@@ -1,12 +1,27 @@
 # Install these first so they can be used while the other packages are installing
 
 $ sudo yum install
-firefox
-thunderbird
-dconf-editor
-gnome-tweak-tool
-synergy
+
+# Basics
 vim-X11
 
+# Web
+firefox
+thunderbird
+xulrunner
+
+# GNOME stuff
+dconf-editor
+gnome-tweak-tool
+
+# MPD
+mpc
+mpd
+mpdscribble
+ncmpcpp
+sonata
+
+# Synergy
+synergy
 $! [ "$HOSTNAME" = "tracce" ]         && synergys
 $! [ "$HOSTNAME" = "lady-labyrinth" ] && synergyc tracce
