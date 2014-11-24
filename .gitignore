@@ -3,4 +3,5 @@ icons/*
 themes/*
 !themes/Bar
 rpms/*
+selinux/tmp
 *.swp
