@@ -87,8 +87,7 @@ install_commands() {
 }
 
 if [ $dry -eq 0 ]; then
- echo 'wet ;)'
- #install_commands packages/* | sh
+ install_commands packages/* | sh
 else
  install_commands packages/*
 fi
