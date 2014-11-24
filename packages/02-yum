@@ -40,6 +40,11 @@ pandoc,-
 pdftk
 tidy
 
+# Imaging
+ImageMagick
+pngcrush
+optipng
+
 # Python
 python-,
  bottle

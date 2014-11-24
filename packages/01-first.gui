@@ -9,6 +9,8 @@ vim-X11
 firefox
 thunderbird
 xulrunner
+nspluginwrapper
+flash-plugin
 
 # GNOME stuff
 dconf-editor
