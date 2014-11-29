@@ -87,7 +87,10 @@ install_commands() {
 }
 
 if [ $dry -eq 0 ]; then
- install_commands packages/* | sh
+ OLDIFS=$IFS
+ IFS=""
+ sh -c "$(install_commands packages/*)"
+ IFS=$OLD_IFS
 else
  install_commands packages/*
 fi
