@@ -4,7 +4,12 @@ $ sudo yum install
 
 # Basics
 byobu
-redhat-lsb
+deltarpm
+redhat-lsb-,
+ core
+ cxx
+ languages
+ submod-security
 vim-enhanced
 wget
 zsh

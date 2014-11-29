@@ -3,6 +3,10 @@
 $ sudo yum install
 
 # Basics
+redhat-lsb-,
+ desktop
+ printing
+ submod-multimedia
 vim-X11
 
 # Web

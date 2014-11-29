@@ -3,8 +3,10 @@
 # Python
 $ sudo pip install
 awscli
+BeautifulSoup
 pylast
 python-gnupg
+PyRSS2Gen
 
 # Node.js
 $ sudo npm install -g

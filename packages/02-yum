@@ -5,9 +5,9 @@ fedup
 koji
 
 # Basics
+bind-utils
 cabextract
 dash
-dig
 id3v2
 kernel-doc
 ncdu
@@ -28,6 +28,10 @@ xar
 git
 mercurial
 svn
+
+# SELinux shit
+policycoreutils-python
+selinux-policy-devel
 
 # Silly stuffs
 cowsay
@@ -86,6 +90,7 @@ php-,
 java-1.8.0-openjdk,-
  devel
  javadoc
+java-1.7.0-openjdk
 bsh
 bsh-utils
 
@@ -95,5 +100,6 @@ lighttpd,-
 httpd-tools
 
 # Yum groups
+$ sudo yum groups mark convert
 $ sudo yum groups install
 "Development Tools"
