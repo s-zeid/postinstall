@@ -4,4 +4,5 @@ themes/*
 !themes/Bar
 rpms/*
 selinux/tmp
+selinux/*.if
 *.swp
