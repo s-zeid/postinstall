@@ -5,7 +5,9 @@ require {
 	type dosfs_t;
 	type home_bin_t;
 	type httpd_t;
+	type httpd_config_t;
 	type user_home_t;
+	type user_tmp_t;
 	class dir add_name;
 	class dir create;
         class dir remove_name;
@@ -22,6 +24,9 @@ require {
 #============= httpd_t ==============
 allow httpd_t dosfs_t:dir { add_name create remove_name setattr write };
 allow httpd_t dosfs_t:file { create execute execute_no_trans rename unlink write };
+allow httpd_t httpd_config_t:file { execute execute_no_trans };
 allow httpd_t home_bin_t:file { execute execute_no_trans };
 allow httpd_t user_home_t:dir { add_name create remove_name setattr write };
 allow httpd_t user_home_t:file { create execute execute_no_trans rename unlink write };
+allow httpd_t user_tmp_t:dir { add_name create remove_name setattr write };
+allow httpd_t user_tmp_t:file { create execute execute_no_trans rename unlink write };
