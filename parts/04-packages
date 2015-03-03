@@ -2,7 +2,7 @@
 
 # Install packages
 
-ARCH="`uname -i`"
+export ARCH="`uname -i`"
 gui() { test -n "$DISPLAY"; }
 
 expand_names() {
