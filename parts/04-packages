@@ -66,10 +66,9 @@ convert_package_list() {
  (expand_names | expand_names | expand_names | collapse_commands) < "$1"
 }
 
-cd "$(dirname "$0")"/..
-
 if [ x"$1" = x"-n" ] || [ x"$1" = x"--dry-run" ]; then
  dry=1
+ shift
 else
  dry=0
 fi
@@ -89,8 +88,18 @@ install_commands() {
 if [ $dry -eq 0 ]; then
  OLDIFS=$IFS
  IFS=""
- sh -c "$(install_commands packages/*)"
+ if [ $# -ne 0 ]; then
+  sh -c "$(install_commands "$@")"
+ else
+  cd "$(dirname "$0")"/..
+  sh -c "$(install_commands packages/*)"
+ fi
  IFS=$OLD_IFS
 else
- install_commands packages/*
+ if [ $# -ne 0 ]; then
+  install_commands "$@"
+ else
+  cd "$(dirname "$0")"/..
+  install_commands packages/*
+ fi
 fi
