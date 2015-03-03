@@ -1,6 +1,7 @@
 #!/bin/bash
 gui() { test -n "$DISPLAY"; }
 gui || exit 0
+[ x"`ps ax | grep -v grep | grep gnome-shell`" != x"" ] || exit 0
 
 cd "$(dirname "$0")"/..
 
