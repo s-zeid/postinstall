@@ -10,20 +10,24 @@ require {
 	type user_tmp_t;
 	class dir add_name;
 	class dir create;
+	class dir read;
         class dir remove_name;
 	class dir setattr;
 	class dir write;
 	class file create;
 	class file execute;
 	class file execute_no_trans;
+	class file getattr;
+	class file open;
+	class file read;
 	class file rename;
         class file unlink;
         class file write;
 }
 
 #============= httpd_t ==============
-allow httpd_t dosfs_t:dir { add_name create remove_name setattr write };
-allow httpd_t dosfs_t:file { create execute execute_no_trans rename unlink write };
+allow httpd_t dosfs_t:dir { add_name create read remove_name setattr write };
+allow httpd_t dosfs_t:file { create execute execute_no_trans getattr open read rename unlink write };
 allow httpd_t httpd_config_t:file { execute execute_no_trans };
 allow httpd_t home_bin_t:file { execute execute_no_trans };
 allow httpd_t user_home_t:dir { add_name create remove_name setattr write };
