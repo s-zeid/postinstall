@@ -1,5 +1,5 @@
 
-module scottywz-php-fpm 1.0;
+module scottywz-httpd 1.0;
 
 require {
 	type dosfs_t;
