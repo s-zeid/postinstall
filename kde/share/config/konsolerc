@@ -1,0 +1,27 @@
+[$Version]
+update_info=konsole.upd:2.9.0-global-options
+
+[Colors]
+CurrentPalette=Forty Colors
+
+[Desktop Entry]
+DefaultProfile=Shell.profile
+
+[Favorite Profiles]
+Favorites=Byobu.profile,s-zeid-me.profile,Shell.profile
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+
+[MainWindow]
+Height 900=547
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAA2IAAAIjAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 1600=866
+
+[Shortcut Schemes]
+Current Scheme=Minimal
+
+[TabBar]
+TabBarVisibility=ShowTabBarWhenNeeded

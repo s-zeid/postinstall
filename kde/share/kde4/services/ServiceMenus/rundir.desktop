@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Service
+Encoding=UTF-8
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory;
+Actions=rundir;
+X-KDE-Priority=TopLevel
+
+[Desktop Action rundir]
+Exec=rundir -- %f
+Name=Run Folder
+Icon=system-run

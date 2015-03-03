@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Service
+Encoding=UTF-8
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory;
+Actions=rundirInKonsole;
+X-KDE-AuthorizeAction=shell_access
+X-KDE-Priority=TopLevel
+
+[Desktop Action rundirInKonsole]
+TryExec=konsole
+Exec=konsole --hold -e rundir -- %f
+Name=Run Folder in Konsole
+Icon=utilities-terminal

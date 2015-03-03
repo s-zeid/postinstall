@@ -1,0 +1,8 @@
+#!/bin/sh
+gui() { test -n "$DISPLAY"; }
+gui || exit 0
+[ x"`ps ax | grep -v grep | grep plasma-desktop`" != x"" ] || exit 0
+
+mkdir -p ~/.kde/share/apps/{color-schemes,QtCurve}
+cp -a kde/share/apps/color-schemes/Red.colors ~/.kde/share/apps/color-schemes/
+cp -a kde/share/apps/QtCurve/Actually_Flat.qtcurve ~/.kde/share/apps/QtCurve/
