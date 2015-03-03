@@ -5,4 +5,5 @@ themes/*
 rpms/*
 selinux/tmp
 selinux/*.if
+selinux/*.pp
 *.swp
