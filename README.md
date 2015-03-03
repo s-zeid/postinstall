@@ -6,7 +6,7 @@ Copyright (c) 2012–2015 Scott Zeid
 This is a set of scripts I use to (almost) automatically configure a Fedora
 installation to my liking.
 
-`postinstall` assumes a Fedora installation (version 17 at the time of this
+`postinstall` assumes a Fedora installation (version 21 at the time of this
 writing) using either KDE Plasma 4 or GNOME Shell as its desktop environment.
 
 Some things (like cron jobs in `cron.d/` and, in some places, GNOME desktop
