@@ -16,10 +16,6 @@ xulrunner
 nspluginwrapper
 flash-plugin
 
-# GNOME stuff
-dconf-editor
-gnome-tweak-tool
-
 # MPD
 mpc
 mpd
@@ -31,3 +27,8 @@ sonata
 synergy
 $! [ "$HOSTNAME" = "tracce" ]         && synergys
 $! [ "$HOSTNAME" = "lady-labyrinth" ] && synergyc tracce
+
+# GNOME stuff
+$ [ x"`ps ax | grep -v grep | grep gnome-shell`" != x"" ] && sudo yum install
+dconf-editor
+gnome-tweak-tool

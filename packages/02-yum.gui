@@ -4,16 +4,6 @@ $ sudo yum install
 xclip
 xsel
 zenity
-
-# GNOME Shell
-gnome-shell-extension-,
- gpaste
- user-theme
-
-# Theming
-gtk-,
- murrine-engine
- unico-engine
 qt-config
 
 # PulseAudio
@@ -38,8 +28,8 @@ ufraw,-
  gimp
 
 # Stuffs
-gpaste
 libreoffice
+qemu
 
 # Multimedia
 easytag
@@ -56,7 +46,6 @@ gstreamer-,
  plugins-ugly
 
 chromium
-VirtualBox
 icedtea-web,-
  javadoc
 webkitgtk
@@ -72,3 +61,36 @@ SDL-devel
 
 # Games
 supertux
+
+# Theming
+gnome-colors-icon-theme
+gnome-icon-theme,-
+ extras
+ symbolic
+
+
+# KDE stuff
+$ [ x"`ps ax | grep -v grep | grep plasma-desktop`" != x"" ] && sudo yum install
+
+# Theming
+qtcurve-,
+ kde4
+ gtk2
+
+
+# GNOME stuff
+$ [ x"`ps ax | grep -v grep | grep gnome-shell`" != x"" ] && sudo yum install
+
+# General
+gpaste
+
+# GNOME Shell
+gnome-shell-extension-,
+ gpaste
+ user-theme
+
+# Theming
+gtk-,
+ murrine-engine
+ unico-engine
+
