@@ -8,7 +8,6 @@ koji
 bind-utils
 cabextract
 dash
-id3v2
 kernel-doc
 ncdu
 nmap
@@ -51,6 +50,12 @@ tidy
 ImageMagick
 pngcrush
 optipng
+
+# Multimedia
+flac
+ffmpeg
+id3v2
+lame
 
 # Python
 python-,

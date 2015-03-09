@@ -32,10 +32,9 @@ libreoffice
 qemu
 
 # Multimedia
+audacity-freeworld
 easytag
 exfalso
-ffmpeg
-lame
 vlc,-
  extras
 mplayer,-
