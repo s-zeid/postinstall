@@ -1,6 +1,7 @@
 $ sudo yum install
 
 # Basics
+x11vnc
 xclip
 xsel
 zenity
