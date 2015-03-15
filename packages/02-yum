@@ -9,6 +9,7 @@ bind-utils
 cabextract
 dash
 kernel-doc
+lsof
 ncdu
 nmap
 openssh-server
