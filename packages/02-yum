@@ -107,6 +107,11 @@ lighttpd,-
  fastcgi
 httpd-tools
 
+# Miscellaneous devel stuff
+autoconf
+automake
+libtool
+
 # Yum groups
 $ sudo yum groups mark convert
 $ sudo yum groups install
