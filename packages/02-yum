@@ -45,6 +45,14 @@ sl
 pandoc,-
  pdf
 pdftk
+texlive-,
+ # missing pandoc-pdf dependencies
+ euenc
+ xetex-,
+  bin
+  def
+ xltxtra
+ zapfding
 tidy
 
 # Imaging
