@@ -6,7 +6,7 @@ export ARCH="`uname -i`"
 gui() { test -n "$DISPLAY"; }
 
 expand_names() {
- awk '
+ awk '{ if (match($0, /^ *#/) == 0) { print } }' | awk '
   BEGIN {
    prefix=""
    glue=""
