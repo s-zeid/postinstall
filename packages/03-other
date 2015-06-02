@@ -11,6 +11,7 @@ twine
 
 # Node.js
 $ sudo npm install -g
+bower
 coffee-script
 stylus
 tiddlywiki
