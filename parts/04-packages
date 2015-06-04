@@ -49,7 +49,7 @@ expand_names() {
    print $0
   }
   /^#/ {}
- '
+ ' | sed -e 's/ *#.*$//g'
 }
 
 collapse_commands() {
