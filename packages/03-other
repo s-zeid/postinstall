@@ -7,6 +7,7 @@ BeautifulSoup
 pylast
 python-gnupg
 PyRSS2Gen
+requests[security]  # https://stackoverflow.com/a/29099439/4339587
 twine
 
 # Node.js
