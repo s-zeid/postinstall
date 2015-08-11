@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 # Install packages
 
 export ARCH="`uname -i`"
-gui() { test -n "$DISPLAY"; }
+gui() { test x"$DISPLAY" != x""; }
 
 expand_names() {
  awk '{ if (match($0, /^ *#/) == 0) { print } }' | awk '
