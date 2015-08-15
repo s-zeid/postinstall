@@ -1,6 +1,6 @@
 # Install these first so they can be used while the other packages are installing
 
-$ sudo yum install
+$ sudo dnf install
 
 # Basics
 redhat-lsb-,
@@ -29,6 +29,6 @@ $! [ "$HOSTNAME" = "tracce" ]         && synergys
 $! [ "$HOSTNAME" = "lady-labyrinth" ] && synergyc tracce
 
 # GNOME stuff
-$ [ x"`ps ax | grep -v grep | grep gnome-shell`" != x"" ] && sudo yum install
+$ [ x"`ps ax | grep -v grep | grep gnome-shell`" != x"" ] && sudo dnf install
 dconf-editor
 gnome-tweak-tool

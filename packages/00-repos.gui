@@ -15,5 +15,5 @@ metadata_expire=120m
 EOF
 
 # Adobe (for Flash Player)
-sudo yum localinstall --nogpgcheck \
+sudo dnf install --nogpgcheck \
  http://linuxdownload.adobe.com/adobe-release/adobe-release-"$ARCH"-1.0-1.noarch.rpm

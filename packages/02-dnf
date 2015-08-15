@@ -1,4 +1,4 @@
-$ sudo yum install
+$ sudo dnf install
 
 # Fedora-specific
 fedup
@@ -121,6 +121,5 @@ automake
 libtool
 
 # Yum groups
-$ sudo yum groups mark convert
-$ sudo yum groups install
+$ sudo dnf group install
 "Development Tools"

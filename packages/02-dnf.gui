@@ -1,4 +1,4 @@
-$ sudo yum install
+$ sudo dnf install
 
 # Basics
 x11vnc
@@ -71,7 +71,7 @@ gnome-icon-theme,-
 
 
 # KDE stuff
-$ [ x"`ps ax | grep -v grep | grep plasma-desktop`" != x"" ] && sudo yum install
+$ [ x"`ps ax | grep -v grep | grep plasma-desktop`" != x"" ] && sudo dnf install
 
 # Theming
 qtcurve-,
@@ -80,7 +80,7 @@ qtcurve-,
 
 
 # GNOME stuff
-$ [ x"`ps ax | grep -v grep | grep gnome-shell`" != x"" ] && sudo yum install
+$ [ x"`ps ax | grep -v grep | grep gnome-shell`" != x"" ] && sudo dnf install
 
 # General
 gpaste

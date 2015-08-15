@@ -1,6 +1,6 @@
 # Install these first so they can be used while the other packages are installing
 
-$ sudo yum install
+$ sudo dnf install
 
 # Basics
 byobu

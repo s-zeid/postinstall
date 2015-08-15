@@ -1,17 +1,17 @@
-# Yum variables
-yum_var() {
+# DNF variables
+dnf_var() {
  printf '%s' "$1" | python -c \
-  'import sys, yum; y = yum.YumBase(); print y.conf.yumvar[sys.stdin.read()]' \
+  'import sys, dnf; b = dnf.Base(); print getattr(b.conf, sys.stdin.read())' \
   | tail -n 1
 }
-basearch=`yum_var basearch`
-releasever=`yum_var releasever`
+basearch=$ARCH
+releasever=`dnf_var releasever`
 
 # RPMFusion
-sudo yum localinstall --nogpgcheck \
+sudo dnf install --nogpgcheck \
  http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm \
  http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
 
 # NodeSource
-sudo yum localinstall --nogpgcheck \
+sudo dnf install --nogpgcheck \
  https://rpm.nodesource.com/pub/fc/$releasever/$basearch/nodesource-release-fc$releasever-1.noarch.rpm
