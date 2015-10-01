@@ -1,9 +1,13 @@
 #!/bin/sh
 gui() { test -n "$DISPLAY"; }
 gui || exit 0
-[ x"`ps ax | grep -v grep | grep plasma-desktop`" != x"" ] || exit 0
+[ x"`ps ax | grep -v grep | grep plasmashell`" != x"" ] || exit 0
 
+mkdir -p ~/.config
+cp -a kde/5/config/* ~/.config/
+mkdir -p ~/.local/share
+cp -a kde/5/share/* ~/.local/share/
 mkdir -p ~/.kde/share
-cp -a kde/share/* ~/.kde/share/
+cp -a kde/4/share/* ~/.kde/share/
 mkdir -p ~/.local/share/applications
 cp -a kde/applications/*.desktop ~/.local/share/applications
