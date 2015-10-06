@@ -49,6 +49,7 @@ pdftk
 texlive-,
  # missing pandoc-pdf dependencies
  euenc
+ mathspec
  xetex-,
   bin
   def
