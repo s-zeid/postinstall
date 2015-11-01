@@ -1,6 +1,8 @@
 $ sudo dnf install
 
 # Basics
+rdesktop
+tigervnc
 x11vnc
 xclip
 xsel
