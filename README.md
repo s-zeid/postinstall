@@ -1,7 +1,7 @@
 postinstall
 ===========
 Copyright (c) 2012–2015 Scott Zeid  
-<http://code.s.zeid.me/postinstall>
+<https://code.s.zeid.me/postinstall>
 
 This is a set of scripts I use to (almost) automatically configure a Fedora
 installation to my liking.
