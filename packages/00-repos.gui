@@ -17,3 +17,8 @@ EOF
 # Adobe (for Flash Player)
 sudo dnf install --nogpgcheck \
  http://linuxdownload.adobe.com/adobe-release/adobe-release-"$ARCH"-1.0-1.noarch.rpm
+
+# Minecraft Overviewer
+cd /etc/yum.repos.d && curl \
+ http://overviewer.org/rpms/overviewer.repo \
+ | sed -e 's/\$releasever/21/g' | sudo tee overviewer.repo >/dev/null
