@@ -6,6 +6,7 @@ echo -n "Setting extra SELinux booleans (this will take a while)... "
 sudo setsebool -P httpd_read_user_content=1 httpd_enable_homedirs=1 \
                   httpd_can_network_connect=1 httpd_use_fusefs=1 \
                   httpd_unified=1 \
+                  haproxy_connect_any=1 \
                   mpd_enable_homedirs=1
 [ $? -eq 0 ] && echo -ne "\x1b[1;32mdone!" || echo -ne "\x1b[1;31mfailed!"
 echo -e "\x1b[0m"
