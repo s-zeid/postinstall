@@ -9,6 +9,7 @@ bind-utils
 cabextract
 dash
 kernel-doc
+letsencrypt
 lsof
 ncdu
 nmap
