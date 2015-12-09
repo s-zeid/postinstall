@@ -78,6 +78,7 @@ python-,
  imaging
  mutagen
  pip
+ requests
  setuptools
  tools
  unidecode
