@@ -4,6 +4,7 @@
 $ sudo pip install
 awscli
 BeautifulSoup
+CherryPy
 pushbullet-cli
 pylast
 python-gnupg

@@ -72,7 +72,6 @@ lame
 # Python
 python-,
  bottle
- cherrypy
  django
  flup
  gevent
