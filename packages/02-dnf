@@ -122,6 +122,6 @@ autoconf
 automake
 libtool
 
-# Yum groups
+# DNF groups
 $ sudo dnf group install
 "Development Tools"
