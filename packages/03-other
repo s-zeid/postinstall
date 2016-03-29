@@ -16,6 +16,7 @@ twine
 $ sudo npm install -g
 bower
 coffee-script
+jpm
 stylus
 tiddlywiki
 
