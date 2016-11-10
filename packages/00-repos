@@ -14,4 +14,4 @@ sudo dnf install --nogpgcheck \
 
 # NodeSource
 sudo dnf install --nogpgcheck \
- https://rpm.nodesource.com/pub_5.x/fc/$releasever/$basearch/nodesource-release-fc$releasever-1.noarch.rpm
+ https://rpm.nodesource.com/pub_6.x/fc/$releasever/$basearch/nodesource-release-fc$releasever-1.noarch.rpm
